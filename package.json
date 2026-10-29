@@ -206,7 +206,7 @@
     "supertest": "7.2.2",
     "syncpack": "13.0.4",
     "tar": "7.5.22",
-    "tsx": "4.22.4",
+    "tsx": "4.23.13",
     "typescript": "5.9.3",
     "vitest": "catalog:",
     "yalc": "1.0.0-pre.53",
