@@ -84,9 +84,9 @@ services:
       - $APP_DIR/pgdata:/var/lib/postgresql/data
 EOF
 
-  # 让 app 与 db 的数据库密码保持一致
+  # 让 app 与 db 的数据库密码保持一致（用 | 作分隔符，避免 base64 密钥中的 / 截断 sed）
   DB_PASS=$(grep -m1 'DATABASE_PASSWORD:' docker-compose.yml | awk '{print $2}')
-  sed -i "s/POSTGRES_PASSWORD: skpl-placeholder/POSTGRES_PASSWORD: ${DB_PASS}/" docker-compose.yml
+  sed -i "s|POSTGRES_PASSWORD: skpl-placeholder|POSTGRES_PASSWORD: ${DB_PASS}|" docker-compose.yml
 
   echo ">>> 构建镜像并启动（首次构建需要 15~30 分钟，建议内存 ≥4GB）"
   docker compose up -d --build
