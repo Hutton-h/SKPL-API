@@ -38,6 +38,9 @@ install_app() {
   if [ ! -d "$APP_DIR/src" ]; then
     echo ">>> 拉取源码到 $APP_DIR/src"
     git clone "$REPO" "$APP_DIR/src"
+  else
+    echo ">>> 更新源码到最新版本"
+    git -C "$APP_DIR/src" pull
   fi
 
   cd "$APP_DIR/src"
