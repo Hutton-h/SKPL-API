@@ -1,0 +1,6 @@
+# SKPL GraphQL
+
+This plugin will add GraphQL functionality to your app.
+By default it will provide you with most of the CRUD methods exposed in the SKPL REST API.
+
+To learn more about GraphQL in SKPL [visit documentation](https://docs.strapi.io/developer-docs/latest/plugins/graphql.html)

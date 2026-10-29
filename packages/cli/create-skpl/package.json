@@ -1,0 +1,46 @@
+{
+  "name": "create-skpl",
+  "version": "5.60.0",
+  "description": "Generate a new SKPL application.",
+  "keywords": [
+    "create-skpl",
+    "create",
+    "new",
+    "generate",
+    "skpl"
+  ],
+  "homepage": "https://github.com/Hutton-h/SKPL-API",
+  "bugs": {
+    "url": "https://github.com/Hutton-h/SKPL-API/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hutton-h/SKPL-API.git",
+    "directory": "packages/cli/create-skpl"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "author": {
+    "name": "Hutton-h",
+    "email": "hutton@skpl.dev",
+    "url": "https://github.com/Hutton-h/SKPL-API"
+  },
+  "maintainers": [
+    {
+      "name": "Hutton-h",
+      "email": "hutton@skpl.dev",
+      "url": "https://github.com/Hutton-h/SKPL-API"
+    }
+  ],
+  "main": "",
+  "bin": "./bin/index.js",
+  "files": [
+    "bin/"
+  ],
+  "dependencies": {
+    "create-skpl-app": "5.60.0"
+  },
+  "engines": {
+    "node": ">=22.0.0 <=26.x.x",
+    "npm": ">=6.0.0"
+  }
+}

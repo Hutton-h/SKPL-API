@@ -1,0 +1,34 @@
+{
+  "name": "kitchensink-ts",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A SKPL application",
+  "license": "MIT",
+  "author": {
+    "name": "Hutton-h",
+    "email": "hutton@skpl.dev",
+    "url": "https://github.com/Hutton-h/SKPL-API"
+  },
+  "scripts": {
+    "build": "skpl build",
+    "develop": "skpl develop",
+    "start": "skpl start",
+    "skpl": "skpl"
+  },
+  "dependencies": {
+    "@skpl/plugin-users-permissions": "workspace:*",
+    "@skpl/strapi": "workspace:*",
+    "better-sqlite3": "12.11.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.30.6",
+    "styled-components": "6.4.1"
+  },
+  "engines": {
+    "node": ">=22.0.0 <=26.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "getstarted"
+  }
+}

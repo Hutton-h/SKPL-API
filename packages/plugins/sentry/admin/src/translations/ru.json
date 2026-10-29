@@ -1,0 +1,5 @@
+{
+  "plugin.description.long": "Отсылает записи об ошибках SKPL в Sentry. Иными словами, ведёт журнал событий с ошибками и отправляет их в Sentry.",
+  "plugin.description.short": "Отсылает записи об ошибках SKPL в Sentry.",
+  "plugin.name": "Sentry"
+}

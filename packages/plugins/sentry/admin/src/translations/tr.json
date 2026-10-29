@@ -1,0 +1,5 @@
+{
+  "plugin.description.long": "SKPL hata olaylarını Sentry'e ilet.",
+  "plugin.description.short": "SKPL hata olaylarını Sentry'e ilet.",
+  "plugin.name": "Sentry"
+}

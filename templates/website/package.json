@@ -1,0 +1,22 @@
+{
+  "name": "website",
+  "private": true,
+  "scripts": {
+    "develop": "skpl develop",
+    "start": "skpl start",
+    "build": "skpl build",
+    "skpl": "skpl",
+    "deploy": "skpl deploy"
+  },
+  "dependencies": {
+    "@skpl/plugin-cloud": "^5.0.0",
+    "@skpl/plugin-graphql": "^5.0.0",
+    "@skpl/plugin-users-permissions": "^5.0.0",
+    "@skpl/strapi": "^5.0.0",
+    "lodash": "^4.17.19",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.30.3",
+    "styled-components": "6.4.1"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "build": "skpl build",
+    "deploy": "skpl deploy",
+    "develop": "skpl develop",
+    "dev": "skpl develop",
+    "console": "skpl console",
+    "start": "skpl start",
+    "skpl": "skpl",
+    "upgrade": "npx @skpl/upgrade latest",
+    "upgrade:dry": "npx @skpl/upgrade latest --dry"
+  }
+}

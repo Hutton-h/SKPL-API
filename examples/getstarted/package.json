@@ -1,0 +1,49 @@
+{
+  "name": "getstarted",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A SKPL application.",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "build": "skpl build",
+    "build:ce": "STRAPI_DISABLE_EE=true skpl build",
+    "develop": "skpl develop",
+    "develop:ce": "STRAPI_DISABLE_EE=true skpl develop",
+    "start": "skpl start",
+    "skpl": "skpl"
+  },
+  "dependencies": {
+    "@strapi/blocks-react-renderer": "1.0.2",
+    "@strapi/icons": "2.2.4",
+    "@skpl/plugin-color-picker": "workspace:*",
+    "@skpl/plugin-documentation": "workspace:*",
+    "@skpl/plugin-graphql": "workspace:*",
+    "@skpl/plugin-sentry": "workspace:*",
+    "@skpl/plugin-users-permissions": "workspace:*",
+    "@skpl/provider-email-mailgun": "workspace:*",
+    "@skpl/provider-upload-aws-s3": "workspace:*",
+    "@skpl/provider-upload-cloudinary": "workspace:*",
+    "@skpl/strapi": "workspace:*",
+    "better-sqlite3": "12.11.1",
+    "lodash": "4.18.1",
+    "mysql2": "3.23.1",
+    "passport-google-oauth2": "0.2.0",
+    "pg": "8.20.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-intl": "6.6.2",
+    "react-router-dom": "6.30.6",
+    "strapi-plugin-workspace-plugin": "workspace:*",
+    "styled-components": "6.4.1"
+  },
+  "engines": {
+    "node": ">=22.0.0 <=26.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "getstarted"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.0"
+  }
+}

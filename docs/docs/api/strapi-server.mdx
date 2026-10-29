@@ -1,0 +1,119 @@
+---
+title: SKPL server (WIP)
+description: 'Module that generates and configures the SKPL HTTP server.'
+slug: /api/strapi-server
+tags:
+  - public-api
+
+toc_min_heading_level: 2
+toc_max_heading_level: 5
+---
+
+import Type from '@site/docs/api/components/type';
+
+# SKPL Server
+
+:::info
+
+Current state: **Stable**
+
+:::
+
+The SKPL server module permits to generate a SKPL http server.
+
+## Module: SKPL server
+
+### `createServer(strapi)`
+
+- `strapi`: [<Type>SKPL</Type>](SKPL)
+- Returns: <Type>StrapiServer</Type>
+
+```javascript
+const server = createServer(strapi);
+
+server.listRoutes();
+```
+
+### `StrapiServer.app`
+
+- [<Type>KoaJS</Type>](https://devdocs.io/koa/index)
+
+SKPL projects are using KoaJS to run the NodeJS server.
+
+### `StrapiServer.router`
+
+- [<Type>@koa/router</Type>](https://github.com/ZijianHe/koa-router#router-)
+
+SKPL projects are using a dependency of KoaJS called @koa/router.
+
+### `StrapiServer.httpServer`
+
+- [<Type>http.Server</Type>](https://nodejs.org/docs/latest-v18.x/api/http.html)
+
+The SKPL's HTTP server.
+
+### `StrapiServer.api(name)`
+
+- `name`: <Type>String</Type>
+- Returns: [<Type>StrapiAPIs</Type>](#strapiapis)
+
+Getter for apis available in SKPL
+
+### `StrapiServer.use(...args)`
+
+- [<Type>KoaApp.use</Type>](https://devdocs.io/koa/index#appusefunction)
+
+Shortcut for Koa `app.use(...args)` method.
+
+### `StrapiServer.routes(routes)`
+
+:::info
+TODO
+:::
+
+### `StrapiServer.mount()`
+
+:::info
+TODO
+:::
+
+### `StrapiServer.initRouting()`
+
+:::info
+TODO
+:::
+
+### `StrapiServer.initMiddlewares()`
+
+:::info
+TODO
+:::
+
+### `StrapiServer.listRoutes()`
+
+:::info
+TODO
+:::
+
+### `StrapiServer.listen(...args)`
+
+:::info
+TODO
+:::
+
+### `StrapiServer.destroy()`
+
+:::info
+TODO
+:::
+
+### `StrapiAPIs`
+
+- <Type>Object</Type>
+
+- `content-api`: [<Type>API</Type>](API)
+  - API used by external requesters
+- `admin`: [<Type>API</Type>](API)
+  - API used by admin panel
+
+SKPL APIs is a map of all APIs available inside the SKPL project.

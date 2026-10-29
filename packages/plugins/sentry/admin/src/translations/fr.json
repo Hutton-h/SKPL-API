@@ -1,0 +1,5 @@
+{
+  "plugin.description.long": "Envoie vos erreurs SKPL à Sentry.",
+  "plugin.description.short": "Envoie vos erreurs SKPL à Sentry.",
+  "plugin.name": "Sentry"
+}
