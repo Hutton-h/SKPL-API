@@ -1,12 +1,14 @@
 services:
   app:
-    build: .
+    # 默认用源码构建；若已有预构建镜像，可改为 image: skpl-api:latest 并删除 build
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: skpl-api
     restart: always
     ports:
       - '1337:1337'
     environment:
-      # 数据库（DB=postgres 走下面的 PG 容器；不设置则默认 sqlite）
       DB: postgres
       DATABASE_HOST: db
       DATABASE_PORT: '5432'
@@ -20,12 +22,12 @@ services:
       TRANSFER_TOKEN_SALT: change-me-transfer-salt
       ENCRYPTION_KEY: change-me-encryption-key
       JWT_SECRET: change-me-jwt-secret
-      # 反向代理对外地址（用 kejilion 的 Nginx 反代时填你的域名，如 https://api.example.com）
+      # 反向代理对外地址（用 kejilion 的"添加域名访问"时填域名）
       # PUBLIC_URL: https://api.example.com
       # IS_PROXIED: 'true'
     volumes:
-      # 本地上传文件持久化
-      - uploads:/app/examples/getstarted/public/uploads
+      # kejilion 风格：数据统一放 /home/docker/<应用名>/ 下的 bind mount
+      - ./uploads:/app/examples/getstarted/public/uploads
     depends_on:
       - db
 
@@ -38,8 +40,4 @@ services:
       POSTGRES_USER: skpl
       POSTGRES_PASSWORD: change-me-strong-password
     volumes:
-      - pgdata:/var/lib/postgresql/data
-
-volumes:
-  uploads:
-  pgdata:
+      - ./pgdata:/var/lib/postgresql/data
