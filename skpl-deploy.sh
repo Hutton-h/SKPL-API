@@ -20,7 +20,8 @@ PORT=1337
 REPO="https://github.com/Hutton-h/SKPL-API.git"
 
 # ---------- 工具函数 ----------
-rand_secret() { openssl rand -base64 32 | tr -d '\n'; }
+# 生成 48 位纯字母数字密钥（避免 sed / shell 特殊字符问题）
+rand_secret() { tr -dc 'A-Za-z0-9' </dev/urandom | head -c 48; }
 
 check_env() {
   command -v docker >/dev/null || { echo "未安装 Docker，请先用 kejilion 脚本安装 Docker"; exit 1; }
