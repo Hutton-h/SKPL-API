@@ -12,7 +12,7 @@ review_notes:
 
 `@skpl/strapi` is the package that a SKPL application installs. It gives the application the `strapi` command, the build tooling for the admin panel, and the public exports of the framework.
 
-It runs in Node.js for the CLI and the build. The `@skpl/strapi/admin` export runs in the browser. `@skpl/core` holds the `SKPL` class. This package does not: it re-exports `@skpl/core` and the types of `@skpl/types`, and it depends on the core packages and plugins that make up a default installation.
+It runs in Node.js for the CLI and the build. The `@skpl/strapi/admin` export runs in the browser. `@skpl/core` holds the `Strapi` class. This package does not: it re-exports `@skpl/core` and the types of `@skpl/types`, and it depends on the core packages and plugins that make up a default installation.
 
 ## Key concepts
 
@@ -27,7 +27,7 @@ The `exports` field of `package.json` has four entries.
 
 ### The `strapi` binary
 
-`bin/strapi.js` calls `runCLI` from `src/cli`. The CLI uses `commander`. Each command is a `StrapiCommand` factory: it receives `{ command, argv, ctx }` and returns a `Command`. The list is in `src/cli/commands/index.ts`. The context `ctx` holds `cwd`, a `logger` and a lazy `tsconfig`. The `logger` honors the `--debug` and `--silent` flags. See [CLI commands](./commands/00-overview.md).
+`bin/skpl.js` calls `runCLI` from `src/cli`. The CLI uses `commander`. Each command is a `StrapiCommand` factory: it receives `{ command, argv, ctx }` and returns a `Command`. The list is in `src/cli/commands/index.ts`. The context `ctx` holds `cwd`, a `logger` and a lazy `tsconfig`. The `logger` honors the `--debug` and `--silent` flags. See [CLI commands](./commands/00-overview.md).
 
 ### Commands from other packages
 
@@ -46,7 +46,7 @@ Some commands delegate their work. `export`, `import` and `transfer` use `@skpl/
 - [Architecture overview](../../../architecture/index.md): the server and admin split, and the `strapi-server` and `strapi-admin` entry points.
 - [Package map](../../../architecture/01-package-map.mdx): where this package sits between the application and the core packages.
 - [Server lifecycle](../../../architecture/02-server-lifecycle.md): the `start`, `console` and `develop` commands create and load the instance.
-- [`@skpl/core`](../core/index.md): defines the `SKPL` class that this package re-exports.
+- [`@skpl/core`](../core/index.md): defines the `Strapi` class that this package re-exports.
 - [`@skpl/types`](../types/index.md): the types that this package re-exports.
 - [`@skpl/admin`](../admin/index.md): the React application that `renderAdmin` mounts.
 - [`@skpl/data-transfer`](../data-transfer/index.md): provides the export, import and transfer engine.

@@ -200,7 +200,7 @@ Core deletes content automatically in two cases. When a content type turns D&P o
 
 | Concern                           | Path                                                                                                                                                           |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Bootstrap, hooks call, repairs    | [`packages/core/core/src/SKPL.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/SKPL.ts)                                           |
+| Bootstrap, hooks call, repairs    | [`packages/core/core/src/Strapi.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/Strapi.ts)                                           |
 | Attributes added to content types | [`packages/core/core/src/domain/content-type/index.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/domain/content-type/index.ts)     |
 | Sync hooks creation               | [`packages/core/core/src/providers/registries.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/providers/registries.ts)               |
 | Metadata and relations            | [`packages/core/database/src/metadata/relations.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/database/src/metadata/relations.ts)           |

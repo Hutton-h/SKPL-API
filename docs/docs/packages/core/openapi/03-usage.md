@@ -17,7 +17,7 @@ By default, it collects content API routes registered in the application, transf
 ### Signature
 
 ```typescript
-function generate(strapi: Core.SKPL, options?: GenerationOptions): GeneratorOutput;
+function generate(strapi: Core.Strapi, options?: GenerationOptions): GeneratorOutput;
 ```
 
 ### Parameters

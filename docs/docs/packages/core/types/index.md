@@ -11,7 +11,7 @@ review_notes:
 
 ## Purpose
 
-`@skpl/types` is the single source of truth for the TypeScript types that the SKPL packages share. It has no runtime logic. The server packages use it to type the `SKPL` instance, the container, plugins, services, controllers, schemas and the Document Service.
+`@skpl/types` is the single source of truth for the TypeScript types that the SKPL packages share. It has no runtime logic. The server packages use it to type the `Strapi` instance, the container, plugins, services, controllers, schemas and the Document Service.
 
 The package README marks it as internal. Application developers import the same types from `@skpl/strapi`, which re-exports `@skpl/types` with `export type *`. The type system is built to adapt to the schemas of one application, and the [Type System](./type-system/index.mdx) pages explain how.
 
@@ -21,7 +21,7 @@ The package README marks it as internal. Application developers import the same 
 
 `src/index.ts` exports each area as a type namespace.
 
-- `Core`: the server runtime types. It holds `SKPL`, the container, controllers, services, policies, middlewares, routes, plugins and configuration.
+- `Core`: the server runtime types. It holds `Strapi`, the container, controllers, services, policies, middlewares, routes, plugins and configuration.
 - `Modules`: the types of the core services, for example the Document Service, event hub, cron, core store, server and session manager.
 - `Data`: the shape of entities, content types and components as data.
 - `Struct`: the base schema types and the schema definitions.
@@ -46,7 +46,7 @@ A public registry is an interface with an index signature, for example `ContentT
 
 ### Global declaration
 
-`src/index.ts` also declares a global `strapi` variable of type `SKPL`. This matches the `global.strapi` assignment in `createStrapi()`. New code must receive `strapi` as a parameter.
+`src/index.ts` also declares a global `strapi` variable of type `Strapi`. This matches the `global.strapi` assignment in `createStrapi()`. New code must receive `strapi` as a parameter.
 
 ### Working with the types
 
@@ -57,6 +57,6 @@ Read the [philosophy](./type-system/01-philosophy.md) before you change a type, 
 - [Container and registries](../../../architecture/03-container-and-registries.md): the runtime side of UIDs and namespaces.
 - [Glossary](../../../architecture/11-glossary.md): the UID and namespace terms.
 - [`@skpl/strapi`](../strapi/index.md): re-exports these types to applications.
-- [`@skpl/core`](../core/index.md): implements the `Core.SKPL` interface.
+- [`@skpl/core`](../core/index.md): implements the `Core.Strapi` interface.
 - [`@skpl/utils`](../utils/index.md): the runtime helpers that go with the shared types.
 - [`@skpl/typescript-utils`](../../utils/typescript/index.md): generates the application types that augment the public registries.

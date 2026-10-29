@@ -1,0 +1,45 @@
+services:
+  app:
+    build: .
+    container_name: skpl-api
+    restart: always
+    ports:
+      - '1337:1337'
+    environment:
+      # 数据库（DB=postgres 走下面的 PG 容器；不设置则默认 sqlite）
+      DB: postgres
+      DATABASE_HOST: db
+      DATABASE_PORT: '5432'
+      DATABASE_NAME: skpl
+      DATABASE_USERNAME: skpl
+      DATABASE_PASSWORD: change-me-strong-password
+      # 生产密钥 —— 部署前务必全部替换为随机字符串
+      APP_KEYS: change-me-key1,change-me-key2
+      API_TOKEN_SALT: change-me-salt
+      ADMIN_JWT_SECRET: change-me-admin-jwt
+      TRANSFER_TOKEN_SALT: change-me-transfer-salt
+      ENCRYPTION_KEY: change-me-encryption-key
+      JWT_SECRET: change-me-jwt-secret
+      # 反向代理对外地址（用 kejilion 的 Nginx 反代时填你的域名，如 https://api.example.com）
+      # PUBLIC_URL: https://api.example.com
+      # IS_PROXIED: 'true'
+    volumes:
+      # 本地上传文件持久化
+      - uploads:/app/examples/getstarted/public/uploads
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16-alpine
+    container_name: skpl-db
+    restart: always
+    environment:
+      POSTGRES_DB: skpl
+      POSTGRES_USER: skpl
+      POSTGRES_PASSWORD: change-me-strong-password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  uploads:
+  pgdata:

@@ -147,8 +147,8 @@ Project/install-level state, often counts or configuration:
 
 | Event                          | Location                                                      | Notes                                                |
 | ------------------------------ | ------------------------------------------------------------- | ---------------------------------------------------- |
-| `didStartServer`               | `packages/core/core/src/SKPL.ts` → `sendStartupTelemetry()` | Fired once per process start; rich `groupProperties` |
-| `didOpenTab` / `didNotOpenTab` | `SKPL.ts` → `openAdmin()`                                   | Dev auto-open browser only                           |
+| `didStartServer`               | `packages/core/core/src/Strapi.ts` → `sendStartupTelemetry()` | Fired once per process start; rich `groupProperties` |
+| `didOpenTab` / `didNotOpenTab` | `Strapi.ts` → `openAdmin()`                                   | Dev auto-open browser only                           |
 | `ping`                         | metrics `register()` cron                                     | Daily noon                                           |
 | `didReceiveRequest`            | `packages/core/core/src/services/metrics/middleware.ts`       | REST API only; not MCP/GraphQL/admin                 |
 

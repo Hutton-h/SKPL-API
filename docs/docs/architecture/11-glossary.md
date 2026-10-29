@@ -23,7 +23,7 @@ Five words have more than one meaning in the codebase:
 
 ### Container
 
-The class that `SKPL` extends. It stores resolvers by name with `add`, resolves them once with `get` and caches the result. It throws on a duplicate name and has no `set` or `remove`. Code: `packages/core/core/src/container.ts`. See [Container and registries](./03-container-and-registries.md).
+The class that `Strapi` extends. It stores resolvers by name with `add`, resolves them once with `get` and caches the result. It throws on a duplicate name and has no `set` or `remove`. Code: `packages/core/core/src/container.ts`. See [Container and registries](./03-container-and-registries.md).
 
 ### Provider
 
@@ -35,7 +35,7 @@ An object that stores named artifacts of one kind, such as services, content typ
 
 ### Core service
 
-A subsystem implemented in `packages/core/core/src/services/`, for example the Document Service, the event hub, the webhook runner or the HTTP server. `SKPL` or a provider mounts it in the container. It is not in the `services` registry.
+A subsystem implemented in `packages/core/core/src/services/`, for example the Document Service, the event hub, the webhook runner or the HTTP server. `Strapi` or a provider mounts it in the container. It is not in the `services` registry.
 
 ### Service
 
@@ -67,7 +67,7 @@ A function in `packages/core/core/src/loaders/` that reads the file system or th
 
 ### Lifecycle function
 
-One of `register`, `bootstrap` or `destroy`. Providers, modules, the admin and the application can each define them. `SKPL` calls them in a fixed order. See [Server lifecycle](./02-server-lifecycle.md).
+One of `register`, `bootstrap` or `destroy`. Providers, modules, the admin and the application can each define them. `Strapi` calls them in a fixed order. See [Server lifecycle](./02-server-lifecycle.md).
 
 ## Extension
 

@@ -121,7 +121,7 @@ interface BuildContext {
   /**
    * The SKPL instance
    */
-  strapi: Core.SKPL;
+  strapi: Core.Strapi;
   /**
    * The browserslist target either loaded from the user's workspace or falling back to the default
    */

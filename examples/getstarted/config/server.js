@@ -5,6 +5,10 @@ const cronTasks = require('./src/cron-tasks');
 module.exports = ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 1337),
+  // PUBLIC_URL：反向代理后的对外地址（如 https://api.example.com），不设置则省略
+  ...(process.env.PUBLIC_URL ? { url: process.env.PUBLIC_URL } : {}),
+  // IS_PROXIED=true 时信任代理头（X-Forwarded-*），配合 Nginx 反代使用
+  ...(env.bool('IS_PROXIED', false) ? { proxy: { koa: true } } : {}),
   cron: {
     enabled: true,
     tasks: cronTasks,

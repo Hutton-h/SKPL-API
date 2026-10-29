@@ -143,7 +143,7 @@ const securedQuery = permissionChecker.sanitizedQuery.read({ sort: 'createdAt:de
 ## Exported Service
 
 ```ts
-export default ({ strapi }: { strapi: Core.SKPL }) => ({
+export default ({ strapi }: { strapi: Core.Strapi }) => ({
   create: createPermissionChecker(strapi),
 });
 ```

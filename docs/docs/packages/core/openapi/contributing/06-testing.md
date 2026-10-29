@@ -32,7 +32,7 @@ import { ApiRoutesProvider } from '../../src/routes';
 import { StrapiMock } from '../mocks';
 
 it('returns registered API routes', () => {
-  const strapi = new StrapiMock() as unknown as Core.SKPL;
+  const strapi = new StrapiMock() as unknown as Core.Strapi;
   const provider = new ApiRoutesProvider(strapi);
 
   expect(provider.routes.length).toBeGreaterThan(0);
@@ -73,7 +73,7 @@ import * as z from 'zod/v4';
 import { OperationParametersAssembler } from '../../src/assemblers/document/path/path-item/operation';
 import { OperationContextFactory } from '../../src/context';
 
-const context = new OperationContextFactory().create({ strapi: {} as Core.SKPL, routes: [] }, {});
+const context = new OperationContextFactory().create({ strapi: {} as Core.Strapi, routes: [] }, {});
 
 new OperationParametersAssembler().assemble(context, {
   method: 'GET',

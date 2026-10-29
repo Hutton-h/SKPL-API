@@ -43,7 +43,7 @@ The provider is registered last in `packages/core/core/src/providers/index.ts`, 
 
 ### Bootstrap ordering matters
 
-SKPL's `bootstrap()` phase runs plugin lifecycles **before** provider lifecycles (`packages/core/core/src/SKPL.ts` — `runPluginsLifecycles(BOOTSTRAP)` runs, then the providers loop runs). Practically:
+The `Strapi` class's `bootstrap()` phase runs plugin lifecycles **before** provider lifecycles (`packages/core/core/src/Strapi.ts` — `runPluginsLifecycles(BOOTSTRAP)` runs, then the providers loop runs). Practically:
 
 1. Plugin `bootstrap()` hooks run — this is where content-manager derives and registers its per-content-type tools (`packages/core/content-manager/server/src/bootstrap.ts`).
 2. Provider `bootstrap()` hooks run — the `mcp` provider calls `strapi.ai.mcp.start()`, which mounts the `/mcp` routes.

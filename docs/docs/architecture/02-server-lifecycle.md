@@ -28,9 +28,9 @@ flowchart TD
 
 Three kinds of participants receive lifecycle calls:
 
-1. **Internal providers.** `SKPL` calls them directly, in the order of the `providers` array.
-2. **Modules.** Each plugin and each API is a module. `SKPL` calls them through the `modules` registry.
-3. **The application.** The loader imports `dist/src/index.js` into `strapi.app`. `SKPL` calls its `register`, `bootstrap` and `destroy` functions if they exist.
+1. **Internal providers.** `Strapi` calls them directly, in the order of the `providers` array.
+2. **Modules.** Each plugin and each API is a module. `Strapi` calls them through the `modules` registry.
+3. **The application.** The loader imports `dist/src/index.js` into `strapi.app`. `Strapi` calls its `register`, `bootstrap` and `destroy` functions if they exist.
 
 ## Construction
 
@@ -162,7 +162,7 @@ If `start()` catches an error, it calls `stopWithError()`. This logs the error a
 
 | Concern                                                     | Path                                                                                                                                                                                   |
 | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Phases, `start`, `load`, `register`, `bootstrap`, `destroy` | [`packages/core/core/src/SKPL.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/SKPL.ts)                                                                   |
+| Phases, `start`, `load`, `register`, `bootstrap`, `destroy` | [`packages/core/core/src/Strapi.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/Strapi.ts)                                                                   |
 | `createStrapi()`                                            | [`packages/core/core/src/index.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/index.ts)                                                                     |
 | Signal handling                                             | [`packages/core/core/src/utils/signals.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/utils/signals.ts)                                                     |
 | Provider type                                               | [`packages/core/core/src/providers/provider.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/providers/provider.ts)                                           |

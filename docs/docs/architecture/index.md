@@ -17,7 +17,7 @@ SKPL is a Yarn workspaces and Nx monorepo. The workspace packages are in `packag
 
 | Part              | Main packages                                                                                                                                   | What it does                                                                                                                                                                                                          |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Server runtime    | `@skpl/core` (`packages/core/core`)                                                                                                           | Defines the `SKPL` class, the container, the internal providers, the registries and the loaders. Contains the core services: Document Service, event hub, webhooks, Koa HTTP server and others.                     |
+| Server runtime    | `@skpl/core` (`packages/core/core`)                                                                                                           | Defines the `Strapi` class, the container, the internal providers, the registries and the loaders. Contains the core services: Document Service, event hub, webhooks, Koa HTTP server and others.                     |
 | Entry package     | `@skpl/strapi` (`packages/core/strapi`)                                                                                                       | Re-exports `@skpl/core` and the types. Contains the `strapi` CLI and the admin build tooling. Applications depend on this package.                                                                                  |
 | Admin panel       | `@skpl/admin` (`packages/core/admin`)                                                                                                         | Contains the React admin application (`admin/`) and its server part (`server/`). The server part holds admin users, roles, admin authentication and admin routes.                                                     |
 | Database layer    | `@skpl/database` (`packages/core/database`)                                                                                                   | A layer on top of Knex: model metadata, schema sync, migrations, entity manager, query builder, database lifecycles and transactions. Dialects: SQLite, PostgreSQL and MySQL. The MySQL dialect also handles MariaDB. |
@@ -43,7 +43,7 @@ A package that adds code to both runtimes declares two entry points in the `expo
 
 ## The SKPL class
 
-`SKPL` extends a small `Container` class. The instance is the central hub of the server. Code receives it as a `strapi` parameter, for example in `register({ strapi })` or in a service factory `({ strapi }) => ({ ... })`.
+`Strapi` extends a small `Container` class. The instance is the central hub of the server. Code receives it as a `strapi` parameter, for example in `register({ strapi })` or in a service factory `({ strapi }) => ({ ... })`.
 
 The instance gives access to:
 
@@ -110,7 +110,7 @@ Read [Container and registries](./03-container-and-registries.md) for details.
 
 | Concern                                     | Path                                                                                                                                                                           |
 | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `SKPL` class                              | [`packages/core/core/src/SKPL.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/SKPL.ts)                                                           |
+| `Strapi` class                              | [`packages/core/core/src/Strapi.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/Strapi.ts)                                                           |
 | `createStrapi()` and `global.strapi`        | [`packages/core/core/src/index.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/index.ts)                                                             |
 | `@skpl/strapi` re-export                  | [`packages/core/strapi/src/index.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/strapi/src/index.ts)                                                         |
 | Admin build: collect `strapi-admin` entries | [`packages/core/strapi/src/node/core/plugins.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/strapi/src/node/core/plugins.ts)                                 |

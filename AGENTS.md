@@ -52,7 +52,7 @@ yarn ai:status  # read-only report: linked / missing / conflict / stale
 
 ## Architecture
 
-- **`SKPL` class** — The DI container and central hub. Accessed as a `strapi` parameter injected through the factory pattern (e.g. `createService(strapi)`). Never use `global.strapi` — always prefer proper dependency injection. Provides `strapi.documents`, `strapi.db`, `strapi.log`, etc. Lifecycle: Register → Bootstrap → Start → Destroy (`start()` calls `load()` internally, which runs register + bootstrap).
+- **`Strapi` class** — The DI container and central hub. Accessed as a `strapi` parameter injected through the factory pattern (e.g. `createService(strapi)`). Never use `global.strapi` — always prefer proper dependency injection. Provides `strapi.documents`, `strapi.db`, `strapi.log`, etc. Lifecycle: Register → Bootstrap → Start → Destroy (`start()` calls `load()` internally, which runs register + bootstrap).
 - **Server / Admin split** — Koa.js HTTP server (`@skpl/strapi`) + React/Redux admin (`@skpl/admin`). Packages with both concerns export dual entry points: `strapi-server` (Node.js logic) and `strapi-admin` (UI components).
 - **Document Service** — The primary high-level API for content (`strapi.documents`). Replaced the legacy Entity Service. Always use this for reading/writing content — never raw DB queries unless you're working inside `@skpl/database` itself.
 - **Polymorphic (morph\*) relations** — Contributor doc: [docs/docs/packages/core/database/01-relations/polymorphic-relations.md](docs/docs/packages/core/database/01-relations/polymorphic-relations.md) (storage, DB populate, and how `getDeepPopulate` / relation traversal interact with `morphToOne` and join-based morphs).

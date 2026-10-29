@@ -14,7 +14,7 @@ Readers pick a section by intent. Put a page where its reader looks for it.
 | Contributing  | Do a task in the monorepo (how-to)            | `docs/docs/contributing/`         | Testing, TypeScript conventions, this page                          |
 | Architecture  | Understand how several packages work together | `docs/docs/architecture/`         | Authentication, future flags                                        |
 | Packages      | Understand or look up one package             | `docs/docs/packages/<repo path>/` | `packages/core/database` is documented in `packages/core/database/` |
-| API reference | Look up the `SKPL` class and its parts      | `docs/docs/api/`                  | Container, event hub                                                |
+| API reference | Look up the `Strapi` class and its parts      | `docs/docs/api/`                  | Container, event hub                                                |
 
 Design proposals (RFCs) are not in this repository. They happen in [GitHub Discussions](https://github.com/strapi/strapi/discussions/categories/rfcs).
 

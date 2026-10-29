@@ -10,15 +10,15 @@ review_notes:
 
 ## Purpose
 
-`@skpl/core` is the server runtime. It defines the `SKPL` class and starts, runs and stops a SKPL application. It loads the configuration, the plugins, the APIs, the components and the middlewares. It hosts the core services, for example the Document Service, the HTTP server, the event hub, webhooks and the MCP server. It runs on the server only.
+`@skpl/core` is the server runtime. It defines the `Strapi` class and starts, runs and stops a SKPL application. It loads the configuration, the plugins, the APIs, the components and the middlewares. It hosts the core services, for example the Document Service, the HTTP server, the event hub, webhooks and the MCP server. It runs on the server only.
 
 Applications do not import it directly. They import `@skpl/strapi`, which re-exports `@skpl/core`. Plugins get the `strapi` instance as a parameter. CLI commands call `createStrapi()` and `compileStrapi()`.
 
 ## Key concepts
 
-### The `SKPL` class and the container
+### The `Strapi` class and the container
 
-`SKPL` extends `Container`, a small service locator with `add`, `get` and `has`. The constructor loads the configuration and adds the core services to the container. `createStrapi()` in [`src/index.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/index.ts) builds the instance. Read [Container and registries](../../../architecture/03-container-and-registries.md). Code: [`src/SKPL.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/SKPL.ts) and [`src/container.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/container.ts).
+`Strapi` extends `Container`, a small service locator with `add`, `get` and `has`. The constructor loads the configuration and adds the core services to the container. `createStrapi()` in [`src/index.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/index.ts) builds the instance. Read [Container and registries](../../../architecture/03-container-and-registries.md). Code: [`src/Strapi.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/Strapi.ts) and [`src/container.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/container.ts).
 
 ### Providers
 
@@ -57,5 +57,5 @@ The `server` service wraps a Koa app. It builds the route managers for the admin
 - [Future flags](../../../architecture/10-future-flags.md): opt-in features that the runtime reads.
 - [`@skpl/strapi`](../strapi/index.md): entry package that re-exports this one.
 - [`@skpl/database`](../database/index.md): `strapi.db`.
-- [`@skpl/types`](../types/index.md): the `Core.SKPL` type and the `Modules.*` contracts.
+- [`@skpl/types`](../types/index.md): the `Core.Strapi` type and the `Modules.*` contracts.
 - [`@skpl/admin`](../admin/index.md): loaded by the `admin` provider.

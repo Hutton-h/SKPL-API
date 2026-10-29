@@ -65,7 +65,7 @@ import {
   // ^  import the newly created provider
 } from './routes';
 
-export const generate = (strapi: Core.SKPL, options?: GenerationOptions): GeneratorOutput => {
+export const generate = (strapi: Core.Strapi, options?: GenerationOptions): GeneratorOutput => {
   // ...
 
   const routeCollector = new RouteCollector(

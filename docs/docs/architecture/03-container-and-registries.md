@@ -7,11 +7,11 @@ review_notes:
   - The container key list reflects releases/5.56.0. It changes when a provider or an internal service is added.
 ---
 
-The `SKPL` instance is a container. The container holds core subsystems and registries. Registries hold the artifacts that plugins, APIs and the application define. This page describes both layers and the UID rules.
+The `Strapi` instance is a container. The container holds core subsystems and registries. Registries hold the artifacts that plugins, APIs and the application define. This page describes both layers and the UID rules.
 
 ## The container
 
-`SKPL` extends `Container`. The container is a small service locator with three methods.
+`Strapi` extends `Container`. The container is a small service locator with three methods.
 
 | Method                | Behavior                                                                                                                                                                                                                                                                                   |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -122,7 +122,7 @@ The content-types registry also checks that each key equals the schema `info.sin
 | `src/registries/` | Stores for named artifacts, with namespace rules and replacement methods.                                                                 | Exports `add`, `get`, `getAll`, and sometimes `set` or `extend`.             |
 | `src/loaders/`    | Read the file system and the enabled plugins, then fill the registries.                                                                   | Called from `loadApplicationContext()`.                                      |
 | `src/domain/`     | Wrappers that turn raw input into runtime objects: `module` (raw module to runtime module) and `content-type` (definition to schema).     | Called by registries.                                                        |
-| `src/services/`   | Implementations of core subsystems: Document Service, event hub, webhooks, HTTP server, entity validator, Content API helpers and others. | Mounted in the container by `SKPL` or by a provider, or imported directly. |
+| `src/services/`   | Implementations of core subsystems: Document Service, event hub, webhooks, HTTP server, entity validator, Content API helpers and others. | Mounted in the container by `Strapi` or by a provider, or imported directly. |
 
 :::caution
 "Services" has two meanings. The `services` registry (`src/registries/services.ts`) holds the services of plugins, APIs and the application. You read it with `strapi.service(uid)`. The folder `src/services/**` holds core implementation code. Most of it is mounted in the container or imported directly. It is not in the `services` registry.
@@ -133,7 +133,7 @@ The content-types registry also checks that each key equals the schema `info.sin
 | Concern                           | Path                                                                                                                                                       |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Container                         | [`packages/core/core/src/container.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/container.ts)                                 |
-| Internal services and getters     | [`packages/core/core/src/SKPL.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/SKPL.ts)                                       |
+| Internal services and getters     | [`packages/core/core/src/Strapi.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/Strapi.ts)                                       |
 | Registries added to the container | [`packages/core/core/src/providers/registries.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/providers/registries.ts)           |
 | Registry list                     | [`packages/core/core/src/registries/index.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/registries/index.ts)                   |
 | Namespace rule                    | [`packages/core/core/src/registries/namespace.ts`](https://github.com/strapi/strapi/blob/develop/packages/core/core/src/registries/namespace.ts)           |

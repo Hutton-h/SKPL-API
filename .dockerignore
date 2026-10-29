@@ -1,0 +1,15 @@
+.git
+node_modules
+**/node_modules
+.nx
+**/dist
+coverage
+test-results
+playwright-report
+**/.tmp
+docs
+tests
+*.log
+.dockerignore
+Dockerfile
+docker-compose.yml
