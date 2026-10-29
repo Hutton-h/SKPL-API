@@ -60,7 +60,7 @@
     "watch": "run -T tsc -p tsconfig.build.json -w"
   },
   "dependencies": {
-    "@casl/ability": "6.7.5",
+    "@casl/ability": "6.8.1",
     "@koa/cors": "5.0.0",
     "@koa/router": "12.0.2",
     "@skpl/database": "5.60.0",

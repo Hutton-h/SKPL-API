@@ -84,7 +84,7 @@
     "watch": "run -T rollup -c -w"
   },
   "dependencies": {
-    "@casl/ability": "6.7.5",
+    "@casl/ability": "6.8.1",
     "@internationalized/date": "3.12.1",
     "@radix-ui/react-context": "1.0.1",
     "@radix-ui/react-toolbar": "1.1.19",
