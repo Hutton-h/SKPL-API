@@ -69,7 +69,7 @@ const createProvider = (config: Config) => {
 
   let modulePath;
   try {
-    modulePath = require.resolve(`@strapi/provider-upload-${providerName}`);
+    modulePath = require.resolve(`@skpl/provider-upload-${providerName}`);
   } catch (error) {
     if (
       typeof error === 'object' &&

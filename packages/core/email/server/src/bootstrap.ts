@@ -25,7 +25,7 @@ const createProvider = (emailConfig: EmailConfig) => {
 
   let modulePath: string;
   try {
-    modulePath = require.resolve(`@strapi/provider-email-${providerName}`);
+    modulePath = require.resolve(`@skpl/provider-email-${providerName}`);
   } catch (error) {
     if (
       error !== null &&
